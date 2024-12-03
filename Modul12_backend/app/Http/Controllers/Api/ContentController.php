@@ -44,7 +44,6 @@ class ContentController extends Controller
 
     }
 
-
     public function store(Request $request)
     {
         $storeData = $request->all();

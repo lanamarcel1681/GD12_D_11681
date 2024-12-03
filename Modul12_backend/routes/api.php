@@ -28,5 +28,11 @@ Route::middleware('auth:api')->group(function(){
     Route::put('/contents/{id}',[App\Http\Controllers\Api\ContentController::class,'update']);
     Route::delete('/contents/{id}',[App\Http\Controllers\Api\ContentController::class,'destroy']);
 
+    Route::get('/watch_later', [App\Http\Controllers\Api\Watch_laterController::class, 'index']); // Semua data (opsional)
+    Route::post('/watch_later', [App\Http\Controllers\Api\Watch_laterController::class, 'store']); // Tambah video ke watch later
+    Route::delete('/watch_later/{id}', [App\Http\Controllers\Api\Watch_laterController::class, 'destroy']); // Hapus video dari watch later
+    Route::get('/watch_later/{id}', [App\Http\Controllers\Api\Watch_laterController::class, 'show']); 
+
     Route::get('/contents/user/{id}',[App\Http\Controllers\Api\ContentController::class,'showContentbyUser']);
-});
+    Route::get('/watch_later/user/{id}', [App\Http\Controllers\Api\Watch_laterController::class, 'showWatch_laterbyUser']); // Tampil semua video watch later user tertentu
+}); 

@@ -11,6 +11,10 @@ const routes = [
     path: "/user/content",
     name: "My Videos",
   },
+  {
+    path: "/user/watch_later",
+    name: "Watch Later",
+  },
 ];
 
 const UserLayout = ({ children }) => {
